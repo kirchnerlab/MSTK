@@ -1,0 +1,36 @@
+#!/bin/bash
+LIB=$1
+BASEDIR="@MSTK_BINARY_DIR@"
+DIR="${BASEDIR}/tests/${LIB}"
+
+# for now, expect that the tests have been run already
+#make "${LIB}_test"
+
+mkdir -p ${DIR}/coverage
+
+#check if gcovr exists
+#hash gcovr &> /dev/null
+#if [ $? -eq 1 ]; 
+#	then     echo >&2 "gcovr not found. Therfore no xml coverage output can be generated"; 
+#else
+#	gcovr -r @MSTK_BINARY_DIR@ -f '.*libmstk*' -e '.*test' -x > @MSTK_BINARY_DIR@/coverage/coverage.xml
+#fi
+
+#check if genhtml exists
+hash genhtml &> /dev/null
+if [ $? -eq 1 ]; 
+	then     echo >&2 "genhtml not found. Therfore no html coverage output can be generated"; 
+else
+
+	lcov --directory ${BASEDIR}/tests/${LIB}/CMakeFiles \
+	     --directory ${BASEDIR}/src/${LIB}/CMakeFiles/mstk-${LIB}.dir \
+	     --directory ${BASEDIR}/src/${LIB}/CMakeFiles \
+	     -capture --output-file ${DIR}/coverage/mstk-${LIB}.info
+	lcov --extract ${DIR}/coverage/mstk-${LIB}.info '*MSTK*' -o ${DIR}/coverage/mstk-${LIB}.info.extracted
+	lcov --remove ${DIR}/coverage/mstk-${LIB}.info.extracted '*test*' -o ${DIR}/coverage/mstk-${LIB}.info.extracted2
+	pushd ${DIR}/coverage/
+	genhtml --demangle-cpp --legend --show-details mstk-${LIB}.info.extracted2
+	popd
+fi
+ 
+ 
