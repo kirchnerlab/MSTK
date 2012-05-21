@@ -1,5 +1,15 @@
-Building MSTK
-=============
+MSTK - The Mass Spectrometry Toolkit
+====================================
+
+0. Status
+---------
+
+We are currently integrating / relocating libraries into the MSTK framework.
+Check out the *integration* branch for the most recent (and pretty stable) code.
+
+
+1. Building MSTK
+----------------
 
 In brief:
 
