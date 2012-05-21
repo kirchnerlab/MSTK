@@ -30,6 +30,10 @@
 
 namespace mstk {
 
+/** @addtogroup mstk_common
+ * @{
+ */
+
 /**
  * @brief Base class wrapper around std::vector.
  *
@@ -254,6 +258,8 @@ template<class T, class A> void swap(Collection<T, A>& lhs,
 {
     lhs.c_.swap(rhs.c_);
 }
+
+/** @} */
 
 }
 

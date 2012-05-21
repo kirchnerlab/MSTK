@@ -29,10 +29,14 @@
 
 #include <string>
 #include <vector>
-//#include <boost/filesystem/path.hpp>
 
 namespace mstk
 {
+
+/** @addtogroup mstk_common
+ * @{
+ */
+
     typedef int Int;
     typedef float Float;
     typedef double Double;
@@ -41,7 +45,9 @@ namespace mstk
     typedef bool Bool;
     typedef char Char;
     typedef std::string String;
-//    typedef boost::filesystem::path Path;
+
+/** @} */
+
 }
 
 #endif

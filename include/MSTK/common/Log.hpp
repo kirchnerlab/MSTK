@@ -34,10 +34,6 @@
 #include <sstream>
 #include <iostream>
 
-/** @addtogroup mstk_common
- * @{
- */
-
 /**
  *
  * @page common_log Logging
@@ -86,6 +82,10 @@
  */
 
 namespace mstk {
+
+/** @addtogroup mstk_common
+ * @{
+ */
 
 // nowTime()
 /**
@@ -457,8 +457,8 @@ inline std::string nowTime()
 
 #endif //WIN32
 
-} /* namespace mstk */
-
 /** @} */
+
+} /* namespace mstk */
 
 #endif /* __MSTK_INCLUDE_MSTK_LOG_HPP__ */

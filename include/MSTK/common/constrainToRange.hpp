@@ -28,6 +28,10 @@
 
 namespace mstk {
 
+/** @addtogroup mstk_common
+ * @{
+ */
+
 /** Returns a value, constrained to the specified range.
  * Returns the value \c value if value lies inside (\c minVal, \c maxVal ) or
  * the minimum/maximum boundary otherwise. The implementation only requires a
@@ -73,6 +77,8 @@ inline T constrainToRange(const T& value, const T& minVal, const T& maxVal, Comp
 }
 
 } // namespace mstk
+
+/** @} */
 
 #endif
 

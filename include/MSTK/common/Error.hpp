@@ -250,8 +250,8 @@ void throw_postcondition_error(bool predicate, const String& message)
  */
 #define mstk_fail(MESSAGE) throw mstk::RuntimeError(MESSAGE)
 
-} // namespace mstk
-
 /** @} */
+
+} // namespace mstk
 
 #endif // __MSTK_INCLUDE_MSTK_ERROR_HPP__

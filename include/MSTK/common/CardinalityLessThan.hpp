@@ -30,6 +30,10 @@
 
 namespace mstk {
 
+/** @addtogroup mstk_common
+ * @{
+ */
+
 template <typename T>
 struct CardinalityLessThan 
   : public std::unary_function<bool, T>
@@ -51,6 +55,8 @@ template<typename T>
 bool CardinalityLessThan<T>::operator()(const T& obj) {
     return obj.size() < minSize_;
 }
+
+/** @} */
 
 } // namespace mstk
 
