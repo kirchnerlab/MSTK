@@ -25,7 +25,7 @@ SET(DATA_INSTALL_DIR ${CMAKE_BINARY_DIR/data})
 #############################################################################
 # Which libs should be built into MSTK? Add new libs using a semicolon
 # as a separator: "common;fe;ngq" etc.
-SET(MSTK_COMPONENTS "common" CACHE STRING "Which libraries should be built?")
+SET(MSTK_COMPONENTS "common;fe" CACHE STRING "Which libraries should be built?")
 # build type: Debug, RelWithDebInfo, and Release
 SET(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING "MSTK build type.")
 # enable testing: this will also attempt to build memory tests
@@ -109,15 +109,16 @@ INCLUDE_DIRECTORIES(
 #)
 
 # require boost
-#SET(Boost_USE_STATIC_LIBS OFF)
-#SET(Boost_USE_STATIC_RUNTIME OFF)
-#SET(Boost_USE_MULTITHREADED OFF)
+SET(Boost_USE_STATIC_LIBS OFF)
+SET(Boost_USE_STATIC_RUNTIME OFF)
+SET(Boost_USE_MULTITHREADED OFF)
 #FIND_PACKAGE(Boost COMPONENTS filesystem program_options regex system REQUIRED)
+FIND_PACKAGE(Boost)
 #IF (NOT ( Boost_MAJOR_VERSION EQUAL 1 AND Boost_MINOR_VERSION EQUAL 47))
 #    MESSAGE(SEND_ERROR "Found Boost ${Boost_MAJOR_VERSION}.${Boost_MINOR_VERSION} but need 1.47.0")
 #ENDIF (NOT(Boost_MAJOR_VERSION EQUAL 1 AND Boost_MINOR_VERSION EQUAL 47))
-#INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
-#LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
+INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
+LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
 
 #############################################################################
 # build: subdirectories

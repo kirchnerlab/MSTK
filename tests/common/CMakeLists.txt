@@ -1,6 +1,7 @@
 
 SET(TEST_LIBS mstk-common)
 #########  List of tests
+ADD_MSTK_TEST("common" "Collection" Collection-test.cpp)
 ADD_MSTK_TEST("common" "Error" Error-test.cpp)
 ADD_MSTK_TEST("common" "Log" Log-test.cpp)
 

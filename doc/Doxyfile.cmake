@@ -269,7 +269,7 @@ EXTRACT_LOCAL_METHODS  = NO
 # where file will be replaced with the base name of the file that contains the anonymous 
 # namespace. By default anonymous namespace are hidden.
 
-EXTRACT_ANON_NSPACES   = YES
+EXTRACT_ANON_NSPACES   = NO
 
 # If the HIDE_UNDOC_MEMBERS tag is set to YES, Doxygen will hide all 
 # undocumented members of documented classes, files or namespaces. 

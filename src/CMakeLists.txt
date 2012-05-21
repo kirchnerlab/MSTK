@@ -1,5 +1,7 @@
 FOREACH(mstkComponent ${MSTK_COMPONENTS})
     ADD_SUBDIRECTORY(${mstkComponent})
+    SET(MSTK_DEPENDENCIES ${MSTK_DEPENDENCIES} mstk-${mstkComponent})
+    SET(MSTK_LIBRARIES ${MSTK_LIBRARIES} mstk-${mstkComponent})
 ENDFOREACH(mstkComponent)
 
 SET(SRCS
@@ -12,8 +14,8 @@ ELSE(NOT ENABLE_COVERAGE)
     ADD_LIBRARY(mstk STATIC ${SRCS})
 ENDIF(NOT ENABLE_COVERAGE)
 
-ADD_DEPENDENCIES(mstk mstk-common)
-TARGET_LINK_LIBRARIES(mstk mstk-common)
+ADD_DEPENDENCIES(mstk ${MSTK_DEPENDENCIES})
+TARGET_LINK_LIBRARIES(mstk ${MSTK_LIBRARIES})
 
 ##############################################################################
 # installation

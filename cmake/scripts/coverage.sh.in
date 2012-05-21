@@ -26,7 +26,7 @@ else
 	     --directory ${BASEDIR}/src/${LIB}/CMakeFiles/mstk-${LIB}.dir \
 	     --directory ${BASEDIR}/src/${LIB}/CMakeFiles \
 	     -capture --output-file ${DIR}/coverage/mstk-${LIB}.info
-	lcov --extract ${DIR}/coverage/mstk-${LIB}.info '*MSTK*' -o ${DIR}/coverage/mstk-${LIB}.info.extracted
+	lcov --extract ${DIR}/coverage/mstk-${LIB}.info '*MSTK/${LIB}*' '*src/${LIB}*' -o ${DIR}/coverage/mstk-${LIB}.info.extracted
 	lcov --remove ${DIR}/coverage/mstk-${LIB}.info.extracted '*test*' -o ${DIR}/coverage/mstk-${LIB}.info.extracted2
 	pushd ${DIR}/coverage/
 	genhtml --demangle-cpp --legend --show-details mstk-${LIB}.info.extracted2

@@ -59,6 +59,7 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/testdata.hpp.in
 )
 
 ADD_SUBDIRECTORY(common)
+ADD_SUBDIRECTORY(fe)
 
 #### Sources
 
