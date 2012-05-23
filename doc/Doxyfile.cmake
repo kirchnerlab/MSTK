@@ -603,7 +603,8 @@ INPUT                  = @MSTK_SOURCE_DIR@/doc \
                          @MSTK_SOURCE_DIR@/include/MSTK \
                          @MSTK_SOURCE_DIR@/include/MSTK/common \
                          @MSTK_SOURCE_DIR@/include/MSTK/fe \
-                         @MSTK_SOURCE_DIR@/include/MSTK/fe/types
+                         @MSTK_SOURCE_DIR@/include/MSTK/fe/types \
+                         @MSTK_SOURCE_DIR@/include/MSTK/ipaca
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is

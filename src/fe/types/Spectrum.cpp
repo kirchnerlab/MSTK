@@ -122,9 +122,6 @@ void Spectrum::clear() {
 Spectrum Spectrum::subset(const double beginMz, 
   const double endMz) const
 {
-    mstk_precondition(is_sorted(begin(), end(), 
-      LessThanMz<Spectrum::Element, Spectrum::Element>()), 
-      "Spectrum must be sorted by mz before trying to get a subset");
     const_iterator first = std::lower_bound(begin(), end(), beginMz, 
       LessThanMz<Spectrum::Element, double>());
     const_iterator last  = std::upper_bound(first, end(), endMz, 

@@ -25,7 +25,7 @@ SET(DATA_INSTALL_DIR ${CMAKE_BINARY_DIR/data})
 #############################################################################
 # Which libs should be built into MSTK? Add new libs using a semicolon
 # as a separator: "common;fe;ngq" etc.
-SET(MSTK_COMPONENTS "common;fe" CACHE STRING "Which libraries should be built?")
+SET(MSTK_COMPONENTS "common;fe;ipaca" CACHE STRING "Which libraries should be built?")
 # build type: Debug, RelWithDebInfo, and Release
 SET(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING "MSTK build type.")
 # enable testing: this will also attempt to build memory tests
@@ -43,9 +43,9 @@ ENDIF(ENABLE_COVERAGE AND(CMAKE_BUILD_TYPE STREQUAL "Release"))
 # build type
 #############################################################################
 # build type-dependent compiler switches
-IF(CMAKE_BUILD_TYPE STREQUAL "Debug" OR CMAKE_BUILD_TYPE STREQUAL "RelWithDebugInfo")
+IF(CMAKE_BUILD_TYPE STREQUAL "Debug" OR CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
     ADD_DEFINITIONS(-DMSTK_DEBUG)
-ENDIF(CMAKE_BUILD_TYPE STREQUAL "Debug" OR CMAKE_BUILD_TYPE STREQUAL "RelWithDebugInfo")
+ENDIF(CMAKE_BUILD_TYPE STREQUAL "Debug" OR CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
 IF(MSVC)
     ADD_DEFINITIONS(-D_CRT_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_WARNINGS -DEXP_STL)
 ELSE(MSVC)
@@ -113,7 +113,7 @@ SET(Boost_USE_STATIC_LIBS OFF)
 SET(Boost_USE_STATIC_RUNTIME OFF)
 SET(Boost_USE_MULTITHREADED OFF)
 #FIND_PACKAGE(Boost COMPONENTS filesystem program_options regex system REQUIRED)
-FIND_PACKAGE(Boost)
+FIND_PACKAGE(Boost REQUIRED)
 #IF (NOT ( Boost_MAJOR_VERSION EQUAL 1 AND Boost_MINOR_VERSION EQUAL 47))
 #    MESSAGE(SEND_ERROR "Found Boost ${Boost_MAJOR_VERSION}.${Boost_MINOR_VERSION} but need 1.47.0")
 #ENDIF (NOT(Boost_MAJOR_VERSION EQUAL 1 AND Boost_MINOR_VERSION EQUAL 47))

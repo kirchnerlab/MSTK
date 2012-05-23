@@ -29,9 +29,9 @@
 #include <MSTK/config.hpp>
 #include <MSTK/fe/SpectrumTraits.hpp>
 #include <MSTK/fe/utils.hpp>
+#include <MSTK/common/Error.hpp>
 #include <algorithm>
 #include <iterator>
-#include <cassert>
 
 namespace mstk {
 
@@ -66,7 +66,7 @@ double SumAbundanceAccumulator::abundance(InputIterator first, InputIterator las
     for (InputIterator i = first; i != last; ++i) {
         abundance += abAcc(*i);
     }
-    assert(!(abundance < 0.0) && "Bogus abundance value.");
+    mstk_assert(!(abundance < 0.0), "Bogus abundance value: must be non-negative.");
     return abundance;
 }
 

@@ -215,13 +215,13 @@ double GaussianMeanAccumulator::mean(InputIterator first, InputIterator last)
                     mass = accMz(*m);
                 } else {
                     // Something is very wrong. Die.
-                    assert(false && "Spectrum length is zero.");
+                    mstk_assert(false, "Spectrum must not be zero.");
                     return 0;
                 }
             }
         }
     }
-    assert(!(mass < 0.0) && "Bogus mass value.");
+    mstk_assert(!(mass < 0.0), "Bogus mass value: mass must be non-negative.");
     MSTK_LOG(logDEBUG2)
             << "mass: " << mass;
     return mass;

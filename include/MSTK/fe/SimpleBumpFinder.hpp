@@ -200,7 +200,7 @@ std::pair<InputIterator, InputIterator> SimpleBumpFinder::findBump(
                 break;
 
             default:
-                assert(false && "Invalid FSM state.");
+                mstk_assert(false, "Invalid FSM state.");
                 break;
         }
         // Don't advance iterators in last step.
