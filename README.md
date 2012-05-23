@@ -28,11 +28,13 @@ In brief:
 2. clone/unzip into MSTK-src directory
 3. cd ..; make MSTK-build; cd MSTK-build
 4. Build in release mode, but include debug info; also enable testing
+
     cmake ../MSTK2-src 
         -DCMAKE_BUILD_TYPE=RelWithDebInfo 
         -DENABLE_TESTING=TRUE
         -DMSTK_COMPONENTS=common;fe;ipaca
         -DCMAKE_INSTALL_PREFIX=/my/install/path
+
 5. make && make test
 6. check if all tests succeeded
 7. make install (this will also build the docs)
