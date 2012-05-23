@@ -29,11 +29,11 @@ In brief:
 3. cd ..; make MSTK-build; cd MSTK-build
 4. Build in release mode, but include debug info; also enable testing
 
-    cmake ../MSTK2-src 
-        -DCMAKE_BUILD_TYPE=RelWithDebInfo 
-        -DENABLE_TESTING=TRUE
-        -DMSTK_COMPONENTS=common;fe;ipaca
-        -DCMAKE_INSTALL_PREFIX=/my/install/path
+        cmake ../MSTK2-src 
+            -DCMAKE_BUILD_TYPE=RelWithDebInfo 
+            -DENABLE_TESTING=TRUE
+            -DMSTK_COMPONENTS=common;fe;ipaca
+            -DCMAKE_INSTALL_PREFIX=/my/install/path
 
 5. make && make test
 6. check if all tests succeeded
