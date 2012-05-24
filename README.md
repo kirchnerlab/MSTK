@@ -25,15 +25,18 @@ Here is a list of modules/components that are currently available in MSTK:
 
 In brief:
 
+0. fulfill the MSTK dependencies. You need: 
+        * boost (>=1.42), http://boost.org/
+        * vigra (>=1.5, for MSTK/psf only), http://hci.iwr.uni-heidelberg.de/vigra/
 1. clone git repo / get tar.gz / etc
 2. clone/unzip into MSTK-src directory
 3. cd ..; make MSTK-build; cd MSTK-build
-4. Build in release mode, but include debug info; also enable testing
+4. Build all MSTK components, in release mode, include debug info and enable testing
 
         cmake ../MSTK2-src 
             -DCMAKE_BUILD_TYPE=RelWithDebInfo 
             -DENABLE_TESTING=TRUE
-            -DMSTK_COMPONENTS=common;fe;ipaca
+            -DMSTK_COMPONENTS=common;fe;ipaca;psf
             -DVIGRA_INCLUDE_DIR=/path/to/vigra/includes
             -DCMAKE_INSTALL_PREFIX=/my/install/path
 
