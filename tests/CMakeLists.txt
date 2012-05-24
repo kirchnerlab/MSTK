@@ -53,14 +53,10 @@ LINK_DIRECTORIES(
     ${MSTK_BINARY_DIR}/src/common
 )
 
-CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/testdata.hpp.in
-    ${CMAKE_CURRENT_BINARY_DIR}/testdata.hpp
-    @ONLY IMMEDIATE
-)
-
-ADD_SUBDIRECTORY(common)
-ADD_SUBDIRECTORY(fe)
-ADD_SUBDIRECTORY(ipaca)
+# subdirs
+FOREACH(mstkComponent ${MSTK_COMPONENTS})
+    ADD_SUBDIRECTORY(${mstkComponent})
+ENDFOREACH(mstkComponent)
 
 #### Sources
 

@@ -18,6 +18,7 @@ Here is a list of modules/components that are currently available in MSTK:
   logging)
 * fe: the LC/MS feature extraction module
 * ipaca: isotope pattern calculation
+* psf: peak shape function modeling
 
 2. Building MSTK
 ----------------
@@ -33,6 +34,7 @@ In brief:
             -DCMAKE_BUILD_TYPE=RelWithDebInfo 
             -DENABLE_TESTING=TRUE
             -DMSTK_COMPONENTS=common;fe;ipaca
+            -DVIGRA_INCLUDE_DIR=/path/to/vigra/includes
             -DCMAKE_INSTALL_PREFIX=/my/install/path
 
 5. make && make test

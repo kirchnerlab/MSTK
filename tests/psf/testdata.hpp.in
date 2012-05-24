@@ -1,0 +1,8 @@
+#ifndef __MSTK_TESTS_PSF_TESTDATA_HPP__
+#define __MSTK_TESTS_PSF_TESTDATA_HPP__
+
+#include <string>
+static const std::string dirTestdata = "@MSTK_SOURCE_DIR@/tests/psf/testdata";
+
+#endif
+
