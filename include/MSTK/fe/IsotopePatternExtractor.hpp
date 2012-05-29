@@ -81,9 +81,10 @@ Size IsotopePatternExtractor<Correlator, Splitter>::operator()(
         "Require at least one search box generator.");
     MSTK_LOG(logDEBUG) << "Extracting isotope patterns from " << xics.size() << "XICs.";
     typedef typename XicContainer::value_type XicType;
+    typedef typename fbi::SetA<XicType, 0, 1> SetA;
     // carry out the box intersection
-    typedef std::vector<std::set<unsigned int> > AdjList;
-    AdjList adjList = fbi::SetA<XicType, 0, 1>::intersect(xics,
+    typedef typename SetA::ResultType AdjList;
+    AdjList adjList = SetA::intersect(xics,
         boxGenerators[0], boxGenerators);
 
     // Correlation filter. Keep adjacency list entries only if
@@ -92,7 +93,7 @@ Size IsotopePatternExtractor<Correlator, Splitter>::operator()(
     size_t nXics = xics.size();
     AdjList filteredAdjList(nXics);
     for (size_t i = 0; i < nXics; ++i) {
-        typedef std::set<unsigned int>::const_iterator SCI;
+        typedef typename AdjList::value_type::const_iterator SCI;
         for (SCI j = adjList[i].begin(); j != adjList[i].end(); ++j) {
             // The adjacency list models an undirected graph and the
             // pearson correlation is a symmetric measure; hence, avoid
@@ -105,8 +106,13 @@ Size IsotopePatternExtractor<Correlator, Splitter>::operator()(
                         || this->correlate(xics[i].begin(), xics[i].end(),
                             xics[*j].begin(), xics[*j].end())
                                 >= correlationThreshold) {
+#ifdef __LIBFBI_USE_SET_FOR_RESULT__
                     filteredAdjList[i].insert(*j);
                     filteredAdjList[*j].insert(i);
+#else
+                    filteredAdjList[i].push_back(*j);
+                    filteredAdjList[*j].push_back(i);
+#endif
                 }
             } else {
                 break;
