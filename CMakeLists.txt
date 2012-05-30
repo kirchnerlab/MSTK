@@ -25,7 +25,7 @@ SET(DATA_INSTALL_DIR ${CMAKE_BINARY_DIR/data})
 #############################################################################
 # Which libs should be built into MSTK? Add new libs using a semicolon
 # as a separator: "common;fe;ngq" etc.
-SET(MSTK_COMPONENTS "common;fe;ipaca;psf" CACHE STRING "Which libraries should be built?")
+SET(MSTK_COMPONENTS "common;fe;aas;ipaca;psf" CACHE STRING "Which libraries should be built?")
 # build type: Debug, RelWithDebInfo, and Release
 SET(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING "MSTK build type.")
 # enable testing: this will also attempt to build memory tests
