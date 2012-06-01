@@ -30,6 +30,7 @@
 #include <MSTK/common/Types.hpp>
 #include <MSTK/common/Log.hpp>
 
+#define __LIBFBI_USE_SET_FOR_RESULT__
 #include <fbi/fbi.h>
 #include <fbi/connectedcomponents.h>
 
@@ -106,13 +107,8 @@ Size IsotopePatternExtractor<Correlator, Splitter>::operator()(
                         || this->correlate(xics[i].begin(), xics[i].end(),
                             xics[*j].begin(), xics[*j].end())
                                 >= correlationThreshold) {
-#ifdef __LIBFBI_USE_SET_FOR_RESULT__
                     filteredAdjList[i].insert(*j);
                     filteredAdjList[*j].insert(i);
-#else
-                    filteredAdjList[i].push_back(*j);
-                    filteredAdjList[*j].push_back(i);
-#endif
                 }
             } else {
                 break;
