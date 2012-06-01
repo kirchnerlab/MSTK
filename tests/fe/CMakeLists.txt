@@ -1,9 +1,6 @@
-
-# require libfbi
-FIND_PACKAGE(LIBFBI REQUIRED)
-INCLUDE(${LIBFBI_USE_FILE})
-
-#
+# External libs
+FIND_PACKAGE(LIBFBI REQUIRED) 
+INCLUDE(${LIBFBI_USE_FILE}) 
 # Test utility library
 SET(SRCS_MSTK_fe_TEST_UTILS utilities.cpp)
 ADD_LIBRARY(mstk-fe-test-utils ${SRCS_MSTK_fe_TEST_UTILS})

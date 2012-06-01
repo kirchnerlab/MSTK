@@ -1,4 +1,13 @@
 ##############################################################################
+# required libraries
+##############################################################################
+FIND_PACKAGE(LIBFBI REQUIRED) 
+INCLUDE(${LIBFBI_USE_FILE}) 
+IF (NOT ( LIBFBI_VERSION_MAJOR EQUAL 1 AND LIBFBI_VERSION_MINOR EQUAL 3))
+    MESSAGE(SEND_ERROR "Found LIBFBI ${LIBFBI_VERSION_MAJOR}.${LIBFBI_VERSION_MINOR} but need 1.3")
+ENDIF (NOT(LIBFBI_VERSION_MAJOR EQUAL 1 AND LIBFBI_VERSION_MINOR EQUAL 3))
+
+##############################################################################
 # build
 ##############################################################################
 # We add all mstk-fe sources here because they should end up in a single
