@@ -41,12 +41,18 @@ TARGET_LINK_LIBRARIES(mstk-aas
 ##############################################################################
 # installation
 ##############################################################################
-FILE(GLOB headers 
+FILE(GLOB mstkAasHeaders 
     "${MSTK_SOURCE_DIR}/include/MSTK/aas/*.hpp"
-    "${MSTK_SOURCE_DIR}/include/MSTK/aas/tools/*.hpp"
-    "${MSTK_SOURCE_DIR}/include/MSTK/aas/adapter/*.hpp"
     "${MSTK_BINARY_DIR}/include/MSTK/aas/*.hpp")
-INSTALL(FILES ${headers} DESTINATION include/MSTK/aas)
+INSTALL(FILES ${mstkAasHeaders} DESTINATION include/MSTK/aas)
+FILE(GLOB mstkToolsHeaders 
+    "${MSTK_SOURCE_DIR}/include/MSTK/aas/tools/*.hpp"
+    "${MSTK_BINARY_DIR}/include/MSTK/aas/tools/*.hpp")
+INSTALL(FILES ${mstkToolsHeaders} DESTINATION include/MSTK/aas/tools)
+FILE(GLOB mstkAdapterHeaders 
+    "${MSTK_SOURCE_DIR}/include/MSTK/aas/adapter/*.hpp"
+    "${MSTK_BINARY_DIR}/include/MSTK/aas/adapter/*.hpp")
+INSTALL(FILES ${mstkAdapterHeaders} DESTINATION include/MSTK/aas/adapter)
 INSTALL(TARGETS mstk-aas
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib)
