@@ -40,6 +40,10 @@ namespace mstk {
 namespace aas {
 namespace tools {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**General digests class.
  * Digests peptides (AminoAcidSequences) using regular expressions.
  *
@@ -125,6 +129,8 @@ private:
      */
     mstk::Bool exceptions_enabled_;
 };
+
+/** @\ */
 
 } // namespace tools
 } // namespace aas

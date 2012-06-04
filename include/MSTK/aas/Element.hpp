@@ -39,6 +39,10 @@ namespace mstk {
 namespace aas {
 namespace elements {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**The class ElementIdExtractor is used allow the instantiation of
  * flyweight<ElementImpl>(Key). This simplifies the instantiation and provides
  * a speed up, since the ElementImpl is instantiated only once.
@@ -90,6 +94,8 @@ bool operator<(const Element& lhs, const Element& rhs);
 bool operator<=(const Element& lhs, const Element& rhs);
 bool operator>(const Element& lhs, const Element& rhs);
 bool operator>=(const Element& lhs, const Element& rhs);
+
+/** @\ */
 
 } // namespace elements
 } // namespace aas

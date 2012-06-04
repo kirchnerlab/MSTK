@@ -39,6 +39,10 @@ namespace mstk {
 namespace aas {
 namespace stoichiometries {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**@brief ID extractor for stoichiometry configurations.
  *
  * The class StoichiometryConfigIdExtractor is used allow the instantiation of
@@ -95,6 +99,8 @@ bool operator<=(const StoichiometryConfig& lhs,
 bool operator>(const StoichiometryConfig& lhs, const StoichiometryConfig& rhs);
 bool operator>=(const StoichiometryConfig& lhs,
     const StoichiometryConfig& rhs);
+
+/** @\ */
 
 } // namespace stoichiometries
 } // namespace aas

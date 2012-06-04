@@ -40,6 +40,10 @@ namespace mstk {
 namespace aas {
 namespace modifications {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /** Representation of a modification.
  *
  * This class is used as an internal data holder to allow the usage of flyweights.
@@ -220,6 +224,8 @@ inline const RawModificationImpl::RawModificationImplKeyType& RawModificationImp
 {
     return id_;
 }
+
+/** @\ */
 
 } // namespace modifications
 } // namespace aas

@@ -38,6 +38,10 @@ namespace mstk {
 namespace aas {
 namespace stoichiometries {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /** Representation of a stoichiometry configuration.
  *
  */
@@ -182,6 +186,8 @@ private:
 // class StoichiometryConfigImpl
 
 std::ostream& operator<<(std::ostream&, const StoichiometryConfigImpl&);
+
+/** @\ */
 
 } // namespace stoichiometries
 } // namespace aas

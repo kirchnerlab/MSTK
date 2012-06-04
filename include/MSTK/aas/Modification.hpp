@@ -42,6 +42,10 @@ namespace mstk {
 namespace aas {
 namespace modifications {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**Representation of an amino acid modification.
  *
  * This class is a wrapper for a RawModification. Furthermore, it provides
@@ -249,6 +253,8 @@ private:
 // class Modification
 
 std::ostream& operator<<(std::ostream&, const Modification&);
+
+/** @\ */
 
 } // namespace modifications
 } // namespace aas

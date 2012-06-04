@@ -42,6 +42,10 @@ namespace mstk {
 namespace aas {
 namespace stoichiometries {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**Representation of a stoichiometry.
  *
  * This class ensures that no element with count 0 exists in the mapping.
@@ -236,6 +240,8 @@ inline mstk::Int Stoichiometry::getAnnotationId(void) const
 {
     return annotationId_;
 }
+
+/** @\ */
 
 } // namespace stoichiometries
 } // namespace aas

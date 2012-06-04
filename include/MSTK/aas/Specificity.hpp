@@ -39,6 +39,10 @@ namespace mstk {
 namespace aas {
 namespace modifications {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /** Representation of the specificity.
  */
 class Specificity
@@ -250,6 +254,8 @@ private:
 
 std::ostream& operator<<(std::ostream&, const Specificity&);
 std::ostream& operator<<(std::ostream&, const std::vector<Specificity>&);
+
+/** @\ */
 
 } // namespace modifications
 } // namespace aas

@@ -39,6 +39,10 @@ namespace mstk {
 namespace aas {
 namespace aminoAcids {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**Representation of an amino acid using aas::aminoAcids::RawAminoAcid.
  */
 class AminoAcid
@@ -173,6 +177,8 @@ private:
 };
 
 std::ostream& operator<<(std::ostream& os, const AminoAcid& a);
+
+/** @} */
 
 } // namespace aminoAcids
 } // namespace aas

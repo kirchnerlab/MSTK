@@ -39,6 +39,10 @@ namespace mstk {
 namespace aas {
 namespace aminoAcids {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**@brief ID extractor for raw amino acids.
  *
  * The class RawAminoAcidIdExtractor is used allow the instantiation of
@@ -93,6 +97,8 @@ bool operator<(const RawAminoAcid& lhs, const RawAminoAcid& rhs);
 bool operator<=(const RawAminoAcid& lhs, const RawAminoAcid& rhs);
 bool operator>(const RawAminoAcid& lhs, const RawAminoAcid& rhs);
 bool operator>=(const RawAminoAcid& lhs, const RawAminoAcid& rhs);
+
+/** @\ */
 
 } // namespace aminoAcids
 } // namespace aas

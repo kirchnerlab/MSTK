@@ -37,6 +37,10 @@ namespace mstk {
 namespace aas {
 namespace aminoAcids {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**Representation of an amino acid.
  *
  * This class only represents the amino acid without its modifications.
@@ -206,6 +210,8 @@ inline const RawAminoAcidImpl::RawAminoAcidImplKeyType& RawAminoAcidImpl::getId(
 {
     return id_;
 }
+
+/** @\ */
 
 } // namespace aminoAcids
 } // namespace aas

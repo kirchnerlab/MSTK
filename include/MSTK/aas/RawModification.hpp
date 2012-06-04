@@ -39,6 +39,10 @@ namespace mstk {
 namespace aas {
 namespace modifications {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**@brief ID extrator for raw modifications.
  *
  * The class RawModificationIdExtractor is used allow the instantiation of
@@ -97,6 +101,8 @@ bool operator<(const RawModification& lhs, const RawModification& rhs);
 bool operator<=(const RawModification& lhs, const RawModification& rhs);
 bool operator>(const RawModification& lhs, const RawModification& rhs);
 bool operator>=(const RawModification& lhs, const RawModification& rhs);
+
+/** @\ */
 
 } // namespace modifications
 } // namespace aas

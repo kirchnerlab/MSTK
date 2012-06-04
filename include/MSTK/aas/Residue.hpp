@@ -39,6 +39,10 @@
 namespace mstk {
 namespace aas {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**Representation of a residue.
  *
  * A residue holds an amino acid and its modification.
@@ -319,6 +323,8 @@ private:
 // class Residue
 
 std::ostream& operator<<(std::ostream&, const Residue&);
+
+/** @\ */
 
 } // namespace aas
 } // namespace mstk

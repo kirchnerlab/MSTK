@@ -33,13 +33,18 @@
 
 #include "MSTK/aas/Residue.hpp"
 #include "MSTK/aas/StoichiometryConfig.hpp"
-#include "MSTK/aas/Collection.hpp"
+
 #include "MSTK/common/Types.hpp"
+#include "MSTK/common/Collection.hpp"
 
 #include <iostream>
 
 namespace mstk {
 namespace aas {
+
+/** @addtogroup mstk_aas
+ * @{
+ */
 
 /** AminoAcidSequence
  * A sequence of amino acids, convenient for peptide representation.
@@ -63,7 +68,7 @@ namespace aas {
  *   If so: store default and use it every time a residue is added?
  *  A amino acid sequence has more than one mod stoichiometry config?
  */
-class AminoAcidSequence : public aas::Collection<aas::Residue>
+class AminoAcidSequence : public mstk::Collection<aas::Residue>
 {
 
 public:
@@ -429,6 +434,8 @@ inline void AminoAcidSequence::applyModificationAtPosition(
 {
     applyModificationAtPosition(modifications::Modification(mod), pos);
 }
+
+/** @\ */
 
 } // namespace aas
 } // namespace mstk

@@ -43,6 +43,10 @@ namespace mstk {
 namespace aas {
 namespace adapter {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 typedef ipaca::detail::Spectrum LibaasSpectrum;
 typedef aas::stoichiometries::Stoichiometry LibaasStoichiometry;
 
@@ -91,10 +95,16 @@ struct StoichiometryConverter
     }
 };
 
+/** @\ */
+
 } // namespace adapter
 } // namespace aas
 
 namespace ipaca {
+
+/** @addtogroup mstk_aas
+ * @{
+ */
 
 template<>
 struct Traits<mstk::aas::adapter::LibaasStoichiometry, mstk::aas::adapter::LibaasSpectrum>
@@ -138,6 +148,8 @@ Double Traits<aas::adapter::LibaasStoichiometry,
 {
     return ipaca::detail::getElectronMass();
 }
+
+/** @\ */
 
 } // namespace ipaca
 } // namespace mstk

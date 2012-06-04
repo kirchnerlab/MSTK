@@ -40,6 +40,10 @@ namespace mstk {
 namespace aas {
 namespace elements {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**Representation of an element.
  *
  * This class holds all information about an element.
@@ -206,6 +210,8 @@ inline const ElementImpl::ElementImplKeyType& ElementImpl::getId() const
 {
     return id_;
 }
+
+/** @\ */
 
 } // namespace elements
 } // namespace aas

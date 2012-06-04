@@ -37,6 +37,10 @@ namespace mstk {
 namespace aas {
 namespace elements {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**Representation of an isotope.
  */
 class Isotope
@@ -103,6 +107,8 @@ inline const mstk::Double& Isotope::getFrequency() const
 
 std::ostream& operator<<(std::ostream&, const Isotope&);
 std::ostream& operator<<(std::ostream&, const std::vector<Isotope>&);
+
+/** @\ */
 
 } // namespace elements
 } // namespace aas

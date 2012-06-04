@@ -38,6 +38,10 @@ namespace mstk {
 namespace aas {
 namespace tools {
 
+/** @addtogroup mstk_aas
+ * @{
+ */
+
 /**General fasta-file reader.
  *
  */
@@ -107,6 +111,8 @@ private:
      */
     aas::AminoAcidSequence::ModificationList fixedModifications_;
 };
+
+/** @\ */
 
 } // namespace tools
 } // namespace aas
