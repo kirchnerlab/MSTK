@@ -19,6 +19,9 @@ Here is a list of modules/components that are currently available in MSTK:
 * fe: the LC/MS feature extraction module
 * ipaca: isotope pattern calculation
 * psf: peak shape function modeling
+* aas: provides standard elements and its corresponding isotope distributions,
+  amino acids, standard modifications and its specificities, stoichiometries and
+  amino acid sequences
 
 2. Building MSTK
 ----------------
@@ -29,6 +32,7 @@ In brief:
 
         * boost (>=1.42), http://boost.org/
         * vigra (>=1.5, for MSTK/psf only), http://hci.iwr.uni-heidelberg.de/vigra/
+        * libfbi (1.3, for MSTK/fe only), https://github.com/mkirchner/libfbi/
 
 1. clone git repo / get tar.gz / etc
 2. clone/unzip into MSTK-src directory
@@ -41,6 +45,8 @@ In brief:
             -DMSTK_COMPONENTS=common;fe;ipaca;psf
             -DVIGRA_INCLUDE_DIR=/path/to/vigra/includes
             -DCMAKE_INSTALL_PREFIX=/my/install/path
+
+   Use -DENABLE_EXAMPLES=TRUE to automatically build examples
 
 5. make && make test
 6. check if all tests succeeded

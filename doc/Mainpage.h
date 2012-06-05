@@ -32,6 +32,35 @@ The new MSTK repository is available here:
 
 \li https://github.com/kirchnerlab/MSTK
 
+\section components Components
+
+\subsection common MSTK Common (common)
+TBA
+
+\subsection aas Amino Acid Sequences (aas)
+TBA
+
+\subsubsection aas_examples AAS Examples
+
+ - \subpage RawModificationExamples "Examples for RawModification"
+ - \subpage ElementsExamples "Examples for Elements"
+ - \subpage StoichiometryConfigExamples "Examples for StoichiometryConfigs"
+ - \subpage ModificationExamples "Examples for Modification"
+ - \subpage Complex1 "Complex use case 1"
+ - \subpage RawAminoAcidExamples "Examples for RawAminoAcid"
+ - \subpage AminoAcidExamples "Examples for AminoAcid"
+ - \subpage ResidueExamples "Examples for Residue"
+ - \subpage AminoAcidSequenceExamples "Examples for AminoAcidSequence"
+
+\subsection ipaca Isotope Pattern Calculation (ipaca)
+TBA
+
+\subsection fe Feature Extraction (fe)
+TBA
+
+\subsection psf Peak Shape Function (psf)
+TBA
+
 */
 
 

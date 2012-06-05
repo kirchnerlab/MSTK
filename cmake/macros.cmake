@@ -102,3 +102,21 @@ MACRO(ADD_MSTK_TEST lib classname src)
             ${CMAKE_SOURCE_DIR}/tests/memtest.py ${CMAKE_CURRENT_BINARY_DIR}/${testNameExe} ${CMAKE_BINARY_DIR})
     ENDIF(HAVE_VALGRIND)
 ENDMACRO(ADD_MSTK_TEST lib classname src)
+
+################################################################
+#
+# Adds an example
+#
+################################################################
+MACRO(ADD_MSTK_EXAMPLE lib classname src)
+	# derive the test file name
+	SET(testName "${lib}_${classname}_example")
+	SET(testNameExe "${testName}_exe")
+	
+	# build the test
+	ADD_EXECUTABLE(${testNameExe} ${src})
+	# and link
+	TARGET_LINK_LIBRARIES(${testNameExe} ${EXAMPLE_LIBS})
+	ADD_CUSTOM_TARGET(${testName} COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${testNameExe})
+	MESSAGE(STATUS "Adding examples for ${lib}/${classname}: ${testNameExe}.")
+ENDMACRO(ADD_MSTK_EXAMPLE lib classname src)

@@ -38,6 +38,7 @@ ENDIF(ENABLE_COVERAGE AND NOT ENABLE_TESTING)
 IF(ENABLE_COVERAGE AND (CMAKE_BUILD_TYPE STREQUAL "Release"))
     MESSAGE(FATAL_ERROR "Can not enable coverage analysis in release mode.")
 ENDIF(ENABLE_COVERAGE AND(CMAKE_BUILD_TYPE STREQUAL "Release"))
+OPTION(ENABLE_EXAMPLES "Compile examples" OFF)
 
 #############################################################################
 # build type
@@ -143,6 +144,13 @@ IF (ENABLE_TESTING)
     ADD_SUBDIRECTORY(tests)
 ENDIF(ENABLE_TESTING)
 
+############################################################################
+# examples
+############################################################################
+IF (ENABLE_EXAMPLES)
+    ADD_SUBDIRECTORY(examples)
+ENDIF (ENABLE_EXAMPLES)
+
 #############################################################################
 # documentation
 #############################################################################
@@ -151,13 +159,15 @@ CONFIGURE_FILE(${MSTK_SOURCE_DIR}/doc/Doxyfile.cmake
     @ONLY IMMEDIATE
 )
 FIND_PACKAGE(Doxygen)
-# add w/ the ALL option to make sure the docs are built for the install
-ADD_CUSTOM_TARGET(doc ALL
-    COMMAND ${DOXYGEN} ${MSTK_BINARY_DIR}/doc/Doxyfile)
-INSTALL(DIRECTORY ${MSTK_BINARY_DIR}/doc/html
-    DESTINATION doc
-    COMPONENT doc
-)
+IF(DOXYGEN_FOUND)
+    # add w/ the ALL option to make sure the docs are built for the install
+     ADD_CUSTOM_TARGET(doc ALL
+        COMMAND ${DOXYGEN} ${MSTK_BINARY_DIR}/doc/Doxyfile)
+     INSTALL(DIRECTORY ${MSTK_BINARY_DIR}/doc/html
+        DESTINATION doc
+        COMPONENT doc
+    )
+ENDIF(DOXYGEN_FOUND)
 
 #############################################################################
 # summary

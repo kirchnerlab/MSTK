@@ -604,7 +604,8 @@ INPUT                  = @MSTK_SOURCE_DIR@/doc \
                          @MSTK_SOURCE_DIR@/include/MSTK/common \
                          @MSTK_SOURCE_DIR@/include/MSTK/fe \
                          @MSTK_SOURCE_DIR@/include/MSTK/fe/types \
-                         @MSTK_SOURCE_DIR@/include/MSTK/ipaca
+                         @MSTK_SOURCE_DIR@/include/MSTK/ipaca \
+                         @MSTK_SOURCE_DIR@/examples
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is
@@ -666,7 +667,7 @@ EXCLUDE_SYMBOLS        =
 # the \include command).
 
 #EXAMPLE_PATH           = @MSTK_SOURCE_DIR@/examples
-EXAMPLE_PATH           = 
+EXAMPLE_PATH           = @MSTK_SOURCE_DIR@/examples
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp
