@@ -1,7 +1,8 @@
 ##############################################################################
 # required libraries
 ##############################################################################
-FIND_PACKAGE(LIBFBI REQUIRED) 
+FIND_PACKAGE(LIBFBI REQUIRED)
+message(STATUS "LIBFBI_USE_FILE ${LIBFBI_USE_FILE}")
 INCLUDE(${LIBFBI_USE_FILE}) 
 IF (NOT ( LIBFBI_VERSION_MAJOR EQUAL 1 AND LIBFBI_VERSION_MINOR EQUAL 3))
     MESSAGE(SEND_ERROR "Found LIBFBI ${LIBFBI_VERSION_MAJOR}.${LIBFBI_VERSION_MINOR} but need 1.3")

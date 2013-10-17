@@ -1,8 +1,19 @@
 ##############################################################################
 # variables
 ##############################################################################
-SET(VIGRA_INCLUDE_DIR "/usr/local/include" CACHE STRING "Path to VIGRA headers?")
+#SET(VIGRA_INCLUDE_DIR "/usr/local/include" CACHE STRING "Path to VIGRA headers?")
+#INCLUDE_DIRECTORIES(${VIGRA_INCLUDE_DIR})
+FIND_PACKAGE(Vigra)
+if(VIGRA_FOUND)
+  message(STATUS "Vigra include found" ${VIGRA_INCLUDE_DIR})
+  message(STATUS "Vigra library found" ${VIGRA_LIBRARY})
+else()
+  message(SEND_ERROR " !!!!!!!!!!!!!!!! Vigra not found !!!!!!!!!!!!!!!! ")
+  return()
+endif()
 INCLUDE_DIRECTORIES(${VIGRA_INCLUDE_DIR})
+#SET(inc ${inc} ${VIGRA_INCLUDE_DIR})
+
 
 ##############################################################################
 # build
