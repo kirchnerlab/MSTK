@@ -102,6 +102,13 @@ INCLUDE_DIRECTORIES(
 )
 
 #############################################################################
+# make headers visible to QT Creator
+#############################################################################
+
+file(GLOB Demo_HEADERS "sql/*.sql" "include/*.hpp" "include/**/*.hpp" "include/**/**/*.hpp" "include/**/**/**/*.hpp" "src/**/*.hpp" "src/**/**/*.hpp")
+add_library(headers SHARED ${Demo_HEADERS} Dummy.cpp)
+
+#############################################################################
 # build: libraries
 #############################################################################
 # linker paths
